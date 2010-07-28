@@ -1,0 +1,7 @@
+*.log
+*.aux
+*.lil
+*.eps
+*.dvi
+*.pdf
+testlily-*
