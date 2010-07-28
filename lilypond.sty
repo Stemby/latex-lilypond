@@ -10,7 +10,6 @@
   \immediate\write\conffile{filename: #1.ly}
   \immediate\closeout\conffile
   \par
-%  \noindent\includegraphics{#1}
-  \IfFileExists{#1.eps}{\noindent\includegraphics{#1}}
-  \par\par % why 2 \par ???
+  \IfFileExists{#1.eps}{\noindent\includegraphics{#1}}{}
+  \par
 }
