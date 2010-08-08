@@ -9,14 +9,15 @@ def main():
     lil.read(sys.argv[1])
     path = lil.get('Config','filename')
     dirname = os.path.dirname(path)
-    if dirname == '':
-        dirname = '.'
     basename = os.path.basename(path)
-    print path, dirname, basename
     # See:
     # http://lilypond.org/doc/v2.13/Documentation/usage/lilypond-output-in-other-programs
-    p = Popen(['lilypond', '-dbackend=eps', '-dno-gs-load-fonts',
-        '-dinclude-eps-fonts', basename], cwd=dirname)
+    args = ['lilypond', '-dbackend=eps', '-dno-gs-load-fonts',
+            '-dinclude-eps-fonts', basename]
+    if dirname == '':
+        p = Popen(args)
+    else:
+        p = Popen(args, cwd=dirname)
     p.wait()
 
 if __name__ == '__main__':
