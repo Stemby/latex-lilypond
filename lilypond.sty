@@ -8,6 +8,7 @@
   \immediate\openout\conffile\jobname.lil
   \immediate\write\conffile{[Config]}
   \immediate\write\conffile{filename: #1.ly}
+  \immediate\write\conffile{columnwidth: \the\columnwidth}
   \immediate\closeout\conffile
   \par
   \IfFileExists{#1.eps}{\noindent\includegraphics{#1}}{}
