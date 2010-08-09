@@ -1,7 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{lilypond}
 
+\RequirePackage{xkeyval}
 \RequirePackage{graphicx}
+
+\newcounter{lilypond@staffsize}
+\DeclareOptionX{staffsize}[0]{\setcounter{lilypond@staffsize}{#1}} % decimal numbers not managed
+\ProcessOptionsX
 
 \newcommand{\lilypondfile}[1]{%
   \newwrite\conffile
@@ -9,6 +14,9 @@
   \immediate\write\conffile{[Config]}
   \immediate\write\conffile{filename: #1.ly}
   \immediate\write\conffile{columnwidth: \the\columnwidth}
+  \immediate\write\conffile{}
+  \immediate\write\conffile{[Options]}
+  \immediate\write\conffile{staffsize: \thelilypond@staffsize}
   \immediate\closeout\conffile
   \par
   \IfFileExists{#1.eps}{\noindent\includegraphics{#1}}{}
