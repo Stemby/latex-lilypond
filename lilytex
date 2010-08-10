@@ -14,7 +14,7 @@ def main():
     columnwidth = lil.get('General', 'columnwidth')[:-2]
     staffsize = lil.get('Options', 'staffsize')[:-2]
     Staffsize = ''
-    if staffsize != '0':
+    if staffsize != '0.0':
         Staffsize = '''
 #(set-global-staff-size %s)
 ''' % staffsize
