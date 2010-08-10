@@ -12,7 +12,7 @@ def main():
     dirname = os.path.dirname(path)
     basename = os.path.basename(path)
     columnwidth = lil.get('General', 'columnwidth')[:-2]
-    staffsize = lil.get('Options', 'staffsize')
+    staffsize = lil.get('Options', 'staffsize')[:-2]
     Staffsize = ''
     if staffsize != '0':
         Staffsize = '''

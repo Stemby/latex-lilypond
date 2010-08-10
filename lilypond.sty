@@ -4,8 +4,8 @@
 \RequirePackage{xkeyval}
 \RequirePackage{graphicx}
 
-\newcounter{lilypond@staffsize}
-\DeclareOptionX{staffsize}[0]{\setcounter{lilypond@staffsize}{#1}} % decimal numbers not managed
+\newlength{\lilypond@staffsize}
+\DeclareOptionX{staffsize}[0]{\setlength{\lilypond@staffsize}{#1pt}}
 \ProcessOptionsX
 
 \newcommand{\lilypondfile}[1]{%
@@ -16,7 +16,7 @@
   \immediate\write\conffile{columnwidth: \the\columnwidth}
   \immediate\write\conffile{}
   \immediate\write\conffile{[Options]}
-  \immediate\write\conffile{staffsize: \thelilypond@staffsize}
+  \immediate\write\conffile{staffsize: \the\lilypond@staffsize}
   \immediate\closeout\conffile
   \par
   \IfFileExists{#1.eps}{\noindent\includegraphics{#1}}{}
