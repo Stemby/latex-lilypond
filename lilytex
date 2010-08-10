@@ -8,10 +8,10 @@ from string import Template
 def main():
     lil = ConfigParser()
     lil.read(sys.argv[1])
-    path = lil.get('Config', 'filename')
+    path = lil.get('General', 'filename')
     dirname = os.path.dirname(path)
     basename = os.path.basename(path)
-    columnwidth = lil.get('Config', 'columnwidth')[:-2]
+    columnwidth = lil.get('General', 'columnwidth')[:-2]
     staffsize = lil.get('Options', 'staffsize')
     Staffsize = ''
     if staffsize != '0':
