@@ -5,7 +5,11 @@
 \RequirePackage{graphicx}
 
 \newlength{\lilypond@staffsize}
+\newlength{\lilypond@betweensystemspace}
+  \setlength{\lilypond@betweensystemspace}{20mm}
 \DeclareOptionX{staffsize}[0]{\setlength{\lilypond@staffsize}{#1pt}}
+\DeclareOptionX{between-system-space}[20]{%
+  \setlength{\lilypond@betweensystemspace}{#1mm}}
 \ProcessOptionsX
 
 \newcommand{\lilypondfile}[1]{%
@@ -17,6 +21,8 @@
   \immediate\write\conffile{}
   \immediate\write\conffile{[Options]}
   \immediate\write\conffile{staffsize: \the\lilypond@staffsize}
+  \immediate\write%
+    \conffile{between-system-space: \the\lilypond@betweensystemspace}
   \immediate\closeout\conffile
   \par
   \IfFileExists{#1.eps}{\noindent\includegraphics{#1}}{}
