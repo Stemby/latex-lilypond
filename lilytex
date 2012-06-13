@@ -27,6 +27,7 @@ def main():
 %% no titles
 %% between-system-space (distance between systems): set by option
 %% betweeb-system-padding: ???
+%% lines justified
 %%
 $Staffsize
 
@@ -39,6 +40,7 @@ $Staffsize
   scoreTitleMarkup = ##f
   between-system-space = $bss\pt
   between-system-padding = #1
+  ragged-right = ##f
 }
 
 

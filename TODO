@@ -1,6 +1,8 @@
+* ragged-right: it should be an option
 * implement all these options: http://lilypond.org/doc/v2.13/Documentation/usage/music-fragment-options
 * provide a {lilypond} environment like this one: http://lilypond.org/doc/v2.13/Documentation/usage/latex
 * provide a \lilypond command like this one: http://lilypond.org/doc/v2.13/Documentation/usage/latex
 * provide a \lilypondversion command like here: http://lilypond.org/doc/v2.13/Documentation/usage/latex
 * documentation
+* \write18
 * upload to CTAN
