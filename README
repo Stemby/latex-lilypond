@@ -9,3 +9,13 @@ How to build the example:
 2.  python lilytex test.lil
 3a. pdflatex test.tex
 3b. latex test.tex
+
+
+Note for Mac OS X users
+=======================
+
+While this[1] issue is not fixed, the shebang has to the added manually to the
+wrapper script.
+
+[1] http://code.google.com/p/lilypond/issues/detail?id=2614
+
