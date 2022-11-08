@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os, sys
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 from subprocess import Popen
 from string import Template
 
@@ -60,8 +60,11 @@ $Staffsize
         bss=betweensystemspace))
     f.close()
     # See:
-    # http://lilypond.org/doc/v2.13/Documentation/usage/lilypond-output-in-other-programs
-    args = ['lilypond', '-dbackend=eps', '-dno-gs-load-fonts',
+    # http://lilypond.org/doc/v2.22/Documentation/usage/other-programs
+    # and
+    # https://lists.gnu.org/archive/html/lilypond-user/2022-11/msg00047.html
+    #args = ['lilypond', '-dbackend=eps', '-dno-gs-load-fonts',
+    args = ['lilypond', '--eps', '-dno-gs-load-fonts',
             '-dinclude-eps-fonts', basename]
     if dirname == '':
         p = Popen(args)

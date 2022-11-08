@@ -1,4 +1,4 @@
-\version "2.12.2"
+\version "2.22.2"
 
 \include "config.ly"
 
